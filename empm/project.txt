@@ -1,0 +1,68 @@
+Project Name: Employee Management Application
+Short Name: Employee Manager
+Slug: employee-manager
+Prefix: empm
+
+
+
+To Do:
+
+1. Employee can
+    Register:
+        Default Status: Pending. Only Admin can approve him and let him login.
+    Update:
+        Only able to update his own profile except these fields:
+            role
+            salary
+            designation
+    View:
+        Only able to view his own profile from his dashboard.
+
+2. Admin can
+    Approval:
+        Can see a list of pending employees and approve or deny any one from the list.
+    Update:
+        Able to update his own profile except these fields:
+            role
+            salary
+            designation
+        Able to update employee profile with all fields.
+    View:
+        Able to view all users profile.
+    Delete:
+        Can delete any user profile.
+
+User Roles:
+    1. Admin - HR
+    2. Employee
+
+
+Tables:
+    empm_users(
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        first_name VARCHAR(255),
+        last_name VARCHAR(255),
+        user_name VARCHAR(255) UNIQUE NOT NULL,
+        email_address VARCHAR(255) UNIQUE NOT NULL,
+        password VARCHAR(255) NOT NULL,
+        phone_number VARCHAR(255),
+        designation VARCHAR(255),
+        street_address VARCHAR(255),
+        city VARCHAR(255),
+        zipcode VARCHAR(255),
+        country VARCHAR(255),
+        gender VARCHAR(255),
+        salary VARCHAR(255),
+        religion VARCHAR(255),
+        status VARCHAR(255),
+        user_role VARCHAR(255),
+        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )
+
+    empm_options(
+        id PRIMARY_KEY AUTO INCREAMENT,
+        option_key VARCHAR(255),
+        option_value VARCHAR(255),
+        timestamp datetime DEFAULT CURRENT_TIME
+    )
+
